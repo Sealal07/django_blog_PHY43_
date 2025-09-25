@@ -1,0 +1,15 @@
+pip install django   --установка
+django-admin --version
+django-admin startproject name_pr   --создание проекта
+cd name_pr
+python manage.py startapp blog  --создание приложения внутри проекта
+python manage.py startapp users
+python manage.py runserver   --запуск сервера(порт 8000)
+python manage.py makemigrations  --создание файлов миграций
+python manage.py migrate   --применение миграций
+python manage.py createsuperuser  --создание суперпользователя
+
+python manage.py startapp profiles
+pip install django-crispy-forms
+pip install pillow
+
