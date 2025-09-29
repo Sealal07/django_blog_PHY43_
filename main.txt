@@ -8,7 +8,6 @@ python manage.py runserver   --запуск сервера(порт 8000)
 python manage.py makemigrations  --создание файлов миграций
 python manage.py migrate   --применение миграций
 python manage.py createsuperuser  --создание суперпользователя
-
 python manage.py startapp profiles
 pip install django-crispy-forms
 pip install pillow
