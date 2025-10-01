@@ -1,7 +1,7 @@
 **Установка и запуск**
 **1. Клонирование репозитория**
  
-git clone [<URL-вашего-репозитория>](https://github.com/Sealal07/django_blog_PHY43_.git)
+git clone https://github.com/Sealal07/django_blog_PHY43_.git
 cd dj_blog/site_blog
 
 **2. Создание виртуального окружения**
