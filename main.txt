@@ -12,3 +12,5 @@ python manage.py startapp profiles
 pip install django-crispy-forms
 pip install pillow
 
+
+
