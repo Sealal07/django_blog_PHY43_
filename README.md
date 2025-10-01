@@ -2,6 +2,7 @@
 **1. Клонирование репозитория**
  
 git clone https://github.com/Sealal07/django_blog_PHY43_.git
+
 cd dj_blog/site_blog
 
 **2. Создание виртуального окружения**
@@ -28,10 +29,10 @@ python manage.py migrate
  
 python manage.py createsuperuser
 
-6. Запуск сервера разработки
+**6. Запуск сервера разработки**
  
 python manage.py runserver
 
-Приложение будет доступно по адресу: http://127.0.0.1:8000/
+**Приложение будет доступно по адресу: http://127.0.0.1:8000/**
 
  
