@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateFrom, ProfileUpdateFrom
+from django.contrib.auth.models import User
 
 @login_required
-def profile_view(request):
-
+def profile_edit(request):
     if request.method == 'POST':
         u_form = UserUpdateFrom(request.POST, instance=request.user)
         p_form = ProfileUpdateFrom(request.POST, request.FILES,
@@ -17,8 +17,13 @@ def profile_view(request):
         u_form = UserUpdateFrom(instance=request.user)
         p_form = ProfileUpdateFrom(instance=request.user.profile)
     context = {'u_form':u_form, 'p_form':p_form}
+    return render(request, 'profiles/profile_edit.html', context)
+
+@login_required
+def profile_view(request):
+    context = {
+        'profile': request.user.profile
+    }
     return render(request, 'profiles/profile.html', context)
-
-
 
 # Create your views here.

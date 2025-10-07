@@ -2,10 +2,32 @@
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
     <h1>{{ post.title }}</h1>
+    <p>{{ post.author.username }}</p>
     <p>{{ post.content }}</p>
     <small>Опубликовано: {{ post.created_at }}</small>
     <br>
+    {% if post.author == user %}
+        <a href="{% url 'post_edit' post.id %}">Редактировать</a>
+        <a href="{% url 'post_delete' post.id  %}">Удалить</a>
+    {% endif %}
     <a href="{% url 'post_list' %}">
         Назад к списку статей
     </a>
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Отправить</button>
+</form>
+{% else %}
+    <a href="{% url 'login' %}">Войдите</a>,
+    чтобы оставить комментарий
+{% endif %}
+{% for comment in comments %}
+    <div>
+    <h2>{{ comment.author.username }}</h2>
+    <small>{{ comment.created_at }}</small>
+        <p>{{ comment.text }}</p>
+        </div>
+{% endfor %}
 {% endblock %}
